@@ -62,6 +62,13 @@ const Intro = () => {
           style={{ zIndex: index, clipPath: "inset(0% 0% 100% 0%)" }}
           />
         ))}
+        <div
+        className="pointer-events-none absolute inset-0 z-10" 
+        style={{
+          background: "radial-gradient(ellipse 100% 88% at 50% 42%, transparent 22%, rgba(0,0,0,0.6) 58%, rgba(0,0,0,0.82) 100%)",
+        }}
+        aria-hidden
+        />
       </div>
     </div>
   )
