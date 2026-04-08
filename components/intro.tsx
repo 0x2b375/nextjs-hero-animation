@@ -11,6 +11,8 @@ export const IMAGES = [
   "/hero1.jpg"
 ]
 
+export const INTRO_END_DELAY_SEC = 0.35 + (IMAGES.length - 1) * 0.3 + 1.1 + 1;
+
 const Intro = () => {
 
   const refs = useRef<(HTMLImageElement | null)[]>([]);
