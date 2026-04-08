@@ -15,6 +15,7 @@ const Intro = () => {
 
   const refs = useRef<(HTMLImageElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const gradientRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const imgs = refs.current.filter(Boolean);
@@ -42,6 +43,12 @@ const Intro = () => {
       ease: "power3.out",
     });
 
+    timeline.to(gradientRef.current, {
+      opacity: 1,
+      duration: 0.85,
+      ease: "power2.out",
+    }, ">");
+
     return () => {
       timeline.kill();
     }
@@ -63,7 +70,8 @@ const Intro = () => {
           />
         ))}
         <div
-        className="pointer-events-none absolute inset-0 z-10" 
+        className="pointer-events-none absolute inset-0 z-10 opacity-0" 
+        ref={gradientRef}
         style={{
           background: "radial-gradient(ellipse 100% 88% at 50% 42%, transparent 22%, rgba(0,0,0,0.6) 58%, rgba(0,0,0,0.82) 100%)",
         }}
